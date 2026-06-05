@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cyber-bg text-cyber-text font-sans antialiased overflow-x-hidden;
+    background-image: 
+      radial-gradient(at 10% 20%, rgba(168, 85, 247, 0.15) 0px, transparent 50%),
+      radial-gradient(at 90% 80%, rgba(56, 189, 248, 0.15) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, .font-cyber {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  .font-outfit {
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .font-sans {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Custom Scrollbar for Futuristic UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(3, 7, 18, 0.9);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.3);
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.6);
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+/* Custom Utilities */
+@layer utilities {
+  /* Futuristic Cyber-Glass Panel */
+  .glass-panel {
+    background: rgba(10, 15, 30, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-panel:hover {
+    border-color: rgba(168, 85, 247, 0.35);
+    box-shadow: 
+      0 12px 40px 0 rgba(0, 0, 0, 0.5),
+      0 0 15px rgba(168, 85, 247, 0.1);
+  }
+
+  .glass-panel-active {
+    border-color: rgba(56, 189, 248, 0.5);
+    box-shadow: 
+      0 8px 32px 0 rgba(0, 0, 0, 0.4),
+      0 0 15px rgba(56, 189, 248, 0.2);
+  }
+
+  /* Cyber Grid Background */
+  .cyber-grid-bg {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+  }
+
+  /* Neon Glow Text */
+  .text-neon-cyan {
+    text-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+  }
+
+  .text-neon-purple {
+    text-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
+  }
+
+  .text-neon-emerald {
+    text-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+  }
+
+  /* Glowing buttons */
+  .btn-cyber-primary {
+    position: relative;
+    overflow: hidden;
+    @apply bg-transparent border border-cyber-primary text-cyber-primary px-5 py-2.5 rounded-lg font-cyber transition-all duration-300 font-semibold tracking-wider text-xs uppercase cursor-pointer;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.1);
+  }
+
+  .btn-cyber-primary:hover {
+    @apply bg-cyber-primary text-cyber-bg;
+    box-shadow: 
+      0 0 20px rgba(56, 189, 248, 0.6),
+      0 0 40px rgba(56, 189, 248, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .btn-cyber-secondary {
+    @apply bg-transparent border border-cyber-secondary text-cyber-secondary px-5 py-2.5 rounded-lg font-cyber transition-all duration-300 font-semibold tracking-wider text-xs uppercase cursor-pointer;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.1);
+  }
+
+  .btn-cyber-secondary:hover {
+    @apply bg-cyber-secondary text-white;
+    box-shadow: 
+      0 0 20px rgba(168, 85, 247, 0.6),
+      0 0 40px rgba(168, 85, 247, 0.2);
+    transform: translateY(-2px);
+  }
+
+  /* Cyber Input fields */
+  .cyber-input {
+    @apply w-full bg-slate-900/60 border border-cyber-border rounded-lg px-4 py-2.5 text-cyber-text placeholder-cyber-muted focus:outline-none focus:border-cyber-primary focus:ring-1 focus:ring-cyber-primary transition-all duration-300;
+    backdrop-filter: blur(4px);
+  }
+
+  .cyber-input:focus {
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+  }
+}
